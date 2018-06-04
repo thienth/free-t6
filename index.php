@@ -17,6 +17,33 @@ $phatbieu->execute();
 // 5.gom tat ca cac du lieu tra ve tu csdl vao 1 bien
 $ketqua = $phatbieu->fetchAll();
 
-echo "<pre>";
-var_dump($ketqua);
  ?>
+
+<table>
+	<thead>
+		<tr>
+			<th>Mã SP</th>
+			<th>Tên SP</th>
+			<th>Ảnh</th>
+			<th>Giá</th>
+			<th>Mô tả</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($ketqua as $banghi): ?>
+			<tr>
+				<td><?php echo $banghi['masp'] ?></td>
+				<td><?php echo $banghi['tensp'] ?></td>
+				<td>
+					<img src="<?php echo $banghi['anhsp'] ?>"
+						 width="200"/>
+				</td>
+				<td><?php echo $banghi['giasp'] ?> vnđ</td>
+				<td><?php echo $banghi['mota'] ?></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>
+
+
+
