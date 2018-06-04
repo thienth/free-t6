@@ -27,6 +27,9 @@ $ketqua = $phatbieu->fetchAll();
 			<th>Ảnh</th>
 			<th>Giá</th>
 			<th>Mô tả</th>
+			<th>
+				<a href="add.php">Thêm mới</a>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,6 +43,17 @@ $ketqua = $phatbieu->fetchAll();
 				</td>
 				<td><?php echo $banghi['giasp'] ?> vnđ</td>
 				<td><?php echo $banghi['mota'] ?></td>
+				<td>
+					<a href="capnhat.php?id=<?php 
+							echo $banghi['masp'] ?>">
+						Cập nhật
+					</a>
+
+					<a href="xoa.php?id=<?php 
+							echo $banghi['masp'] ?>">
+						Xoá
+					</a>
+				</td>
 			</tr>
 		<?php endforeach ?>
 	</tbody>
